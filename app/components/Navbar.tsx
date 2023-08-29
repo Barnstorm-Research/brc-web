@@ -25,23 +25,27 @@ const NavLink = ({ href, text }: NavLinkProps) => {
 
 const Navbar = () => {
   return (
-    <nav className="bg-background">
+    <div className="bg-background">
       {/* Desktop Nav */}
-      <ul className="hidden sm:flex gap-6 p-4 justify-center">
-        <NavLink href="/" text="About" />
-        <NavLink href="/publications" text="Publications" />
-        <NavLink href="/contact" text="Contact" />
-        <NavLink href="/join" text="Join Our Team" />
-      </ul>
+      <nav>
+        <ul className="hidden sm:flex gap-6 p-4 justify-center">
+          <NavLink href="/" text="About" />
+          <NavLink href="/publications" text="Publications" />
+          <NavLink href="/contact" text="Contact" />
+          <NavLink href="/join" text="Join Our Team" />
+        </ul>
+      </nav>
 
       {/* Mobile nav */}
-      <ul className="flex flex-col gap-2 p-4 sm:hidden">
-        <NavLink href="/" text="About" />
-        <NavLink href="/publications" text="Publications" />
-        <NavLink href="/contact" text="Contact" />
-        <NavLink href="/join" text="Join Our Team" />
-      </ul>
-    </nav>
+      <nav>
+        <ul className="flex flex-col gap-2 p-4 sm:hidden">
+          <NavLink href="/" text="About" />
+          <NavLink href="/publications" text="Publications" />
+          <NavLink href="/contact" text="Contact" />
+          <NavLink href="/join" text="Join Our Team" />
+        </ul>
+      </nav>
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 const JoinPage = () => {
   return (
-    <main className="flex flex-col p-12 flex-1">
+    <main className="flex flex-col p-6 sm:p-12 flex-1">
       <h1>Join Us</h1>
     </main>
   );
