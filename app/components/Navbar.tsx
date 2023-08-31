@@ -60,7 +60,11 @@ const Navbar = () => {
       {/* Mobile nav */}
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger className="sm:hidden">
-          <Image src={hamburgerMenu as string} alt="Menu." className="h-6 w-6" />
+          <Image
+            src={hamburgerMenu as string}
+            alt="Menu."
+            className="h-6 w-6"
+          />
         </SheetTrigger>
         <SheetContent side="top">
           <SheetHeader>
