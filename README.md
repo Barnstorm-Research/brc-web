@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## VSCode Setup
+
+Be sure to install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and adjust your VSCode settings as such:
+
+- Set `Default Formatter` to `Prettier - code formatter`
+
+- Enable `Format on Save`
+
 ## Getting Started
 
 First, build the Docker image:
