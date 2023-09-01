@@ -16,6 +16,7 @@ module.exports = {
         // extend standard tailwind colors
         background: "#888888",
         "primary-text": "#000000",
+        "accent-text": "#0ea5e9",
       },
     },
   },
