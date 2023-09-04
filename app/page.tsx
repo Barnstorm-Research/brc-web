@@ -48,10 +48,10 @@ const Home = () => {
         </div>
 
         <div className="sm:px-8 p-4 py-16 relative max-w-7xl m-auto mb-32 md:mb-64 min-h-[470px] flex flex-col justify-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 max-w-xl">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 max-w-xl text-border-green-700 text-border-1">
             Coordination Under Uncertainty
           </h2>
-          <p className="z-10 p-4 md:max-w-md lg:max-w-xl xl:max-w-3xl border-l border-solid border-neutral-700 text-neutral-100 font-thin text-lg">
+          <p className="z-10 p-4 md:max-w-md lg:max-w-xl xl:max-w-3xl border-l border-solid border-neutral-700 text-border-gray-700 text-border-1 text-neutral-100 text-lg">
             We specialize in helping teams of manned and unmanned vehicles
             communicate in limited communications environments. Barnstorm
             Research has developed software to assist in missions that need
