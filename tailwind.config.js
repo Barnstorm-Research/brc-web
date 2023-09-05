@@ -34,8 +34,12 @@ module.exports = {
         // extend standard tailwind colors
         background: "#888888",
         "primary-text": "#000000",
+        "main-accent": "#3a5520",
       },
     },
+  },
+  future: {
+    hoverOnlyWhenSupported: true,
   },
   plugins: [require("tailwindcss-animate")],
 };
