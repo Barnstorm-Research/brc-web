@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -34,7 +37,12 @@ module.exports = {
         // extend standard tailwind colors
         background: "#888888",
         "primary-text": "#000000",
+        "main-accent": "#3a5520",
       },
+    },
+    screens: {
+      xs: "400px",
+      ...defaultTheme.screens,
     },
   },
   plugins: [require("tailwindcss-animate")],
