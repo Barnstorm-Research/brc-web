@@ -12,21 +12,22 @@ type FooterNavLinkProps = {
 const FooterNavLink = ({ href, text }: FooterNavLinkProps) => {
   const currentRoute = usePathname();
 
-  const shouldHaveUnderline =
+  const isActiveRoute =
     currentRoute.includes(href.slice(1)) ||
     (currentRoute === "/" && href === "/#about");
 
   return (
     <Link
       href={href}
-      className="text-neutral-500 hover:text-neutral-100 w-fit whitespace-nowrap transition-all duration-300"
+      className={`text-neutral-500 ${
+        !isActiveRoute ? "hover:text-neutral-100" : "hover:cursor-default"
+      } w-fit whitespace-nowrap transition-all duration-300`}
     >
-      <span>{text}</span>
-      <div
-        className={`w-6 h-[1px] ${
-          shouldHaveUnderline ? "bg-neutral-500" : "bg-neutral-900"
-        }`}
-      ></div>
+      <span
+        className={`${isActiveRoute ? "underline underline-offset-4" : ""}`}
+      >
+        {text}
+      </span>
     </Link>
   );
 };
@@ -41,8 +42,26 @@ const links = [
 const Footer = () => {
   return (
     <footer className="px-4 pb-6 pt-16 bg-neutral-900 text-center text-neutral-500">
-      <div className="sm:flex justify-around items-center mb-16">
-        <div className="mb-20 sm:mb-0 flex-1">
+      <div className="sm:flex flex-row-reverse justify-around items-center mb-14 md:mb-16">
+        <section className="flex-1 mb-20 sm:mb-0">
+          <div className="sm:max-w-[190px] lg:max-w-md sm:m-auto pl-4 sm:pl-0">
+            <h2 className="text-neutral-100 uppercase tracking-widest mb-4 text-left ">
+              Links
+            </h2>
+            <nav className="">
+              <ul className="flex flex-col gap-3 items-start lg:flex-row lg:gap-8">
+                {links.map((link) => {
+                  return (
+                    <li key={link.text}>
+                      <FooterNavLink href={link.path} text={link.text} />
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <div className="flex-1">
           <h2 className="text-xl lg:text-2xl pb-4 lg:px-16 text-neutral-500 whitespace-nowrap">
             Barnstorm Research
           </h2>
@@ -61,22 +80,6 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <section className="flex-1">
-          <h2 className="text-neutral-100 uppercase tracking-widest mb-4 text-left max-w-[190px] lg:max-w-md m-auto">
-            Links
-          </h2>
-          <nav className="max-w-[190px] m-auto lg:max-w-md">
-            <ul className="flex flex-col gap-2 items-start lg:flex-row lg:gap-8">
-              {links.map((link) => {
-                return (
-                  <li key={link.text}>
-                    <FooterNavLink href={link.path} text={link.text} />
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </section>
       </div>
 
       <section className="border-t border-solid border-neutral-700 pt-6 md:px-6 lg:px-12">
