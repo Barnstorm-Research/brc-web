@@ -20,13 +20,13 @@ const PublicationsPage = () => {
   const teamMemberLinks: TeamMemberLinkType[] = [
     {
       name: "Jorge Tierno",
-      href: "",
+      href: "https://scholar.google.com/citations?user=sqNXWIMAAAAJ&hl=en&oi=ao",
       image: undefined,
       prefix: "Dr.",
     },
     {
       name: "Rem Wransky",
-      href: "",
+      href: "https://scholar.google.com/citations?user=oO21unYAAAAJ&hl=en&oi=sra",
       image: undefined,
       prefix: "Ms.",
     },
