@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /** @type {import('tailwindcss').Config} */
 
+const defaultTheme = require("tailwindcss/defaultTheme");
 const plugin = require("tailwindcss/plugin");
 const flattenColorPalette =
   require("tailwindcss/lib/util/flattenColorPalette").default;
