@@ -25,8 +25,13 @@ const Home = () => {
           </Button>
         </div>
       </section>
-      <h1>About</h1>
-      <section id="about">
+      <h1
+        id="about"
+        className="text-xl md:text-2xl text-center uppercase tracking-widest p-4 pb-12 md:pb-24 text-neutral-400"
+      >
+        About
+      </h1>
+      <section>
         <div className="px-4 py-40">
           <div className="relative w-fit m-auto sm:p-16 max-w-2xl">
             <h2 className="text-center text-2xl uppercase tracking-widest pb-12 px-4 text-neutral-400 font-extralight">
