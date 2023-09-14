@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/sheet";
 
 const links = [
-  { path: "/", text: "About" },
+  { path: "/", text: "Home" },
   { path: "/publications", text: "Publications" },
   { path: "/contact", text: "Contact Us" },
   { path: "/join", text: "Join Our Team" },
