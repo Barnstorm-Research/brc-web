@@ -14,66 +14,52 @@ import {
 } from "@/components/ui/sheet";
 
 const links = [
-  { path: "/#about", text: "About" },
+  { path: "/", text: "Home" },
   { path: "/publications", text: "Publications" },
   { path: "/contact", text: "Contact Us" },
   { path: "/join", text: "Join Our Team" },
 ];
 
-const getActiveRouteBool = (currentRoute: string, href: string) => {
-  return (
-    currentRoute.includes(href.slice(1)) ||
-    (currentRoute === "/" && href === "/#about")
-  );
-};
+type NavLinkProps =
+  | {
+      href: string;
+      text: string;
+      isMobile: true;
+      onClick: React.MouseEventHandler<HTMLDivElement>;
+    }
+  | {
+      href: string;
+      text: string;
+      isMobile?: false;
+      onClick?: never;
+    };
 
-type HeaderNavLinkProps = {
-  href: string;
-  text: string;
-};
-
-const HeaderNavLink = ({ href, text }: HeaderNavLinkProps) => {
+const NavLink = ({ href, text, isMobile, onClick }: NavLinkProps) => {
   const currentRoute = usePathname();
 
-  const isActiveRoute = getActiveRouteBool(currentRoute, href);
+  const isActiveRoute = currentRoute === href;
 
-  return (
-    <Link
-      href={href}
-      className={`${
-        isActiveRoute
-          ? " text-neutral-200 underline underline-offset-8 hover:cursor-default"
-          : "text-neutral-400 hover:text-neutral-200 border-transparent"
-      } w-fit whitespace-nowrap transition-all duration-300 py-4 px-4 text-center font-light`}
-    >
-      {text}
-    </Link>
-  );
-};
-
-type MobileNavLinkProps = {
-  href: string;
-  text: string;
-  onClick: React.MouseEventHandler<HTMLDivElement>;
-};
-
-const MobileNavLink = ({ href, text, onClick }: MobileNavLinkProps) => {
-  const currentRoute = usePathname();
-
-  const isActiveRoute = getActiveRouteBool(currentRoute, href);
-
-  return (
-    <Link
-      href={href}
-      className={`${
-        isActiveRoute
+  const styles = isMobile
+    ? `${
+        isActiveRoute // mobile styles
           ? "text-neutral-200 bg-neutral-900 rounded font-semibold hover:cursor-default"
           : "text-neutral-400 hover:text-neutral-100"
-      }   whitespace-nowrap transition-all duration-300 text-left`}
-    >
-      <div className="py-2 px-4" onClick={onClick}>
-        {text}
-      </div>
+      }   whitespace-nowrap transition-all duration-300 text-left`
+    : `${
+        isActiveRoute // desktop styles
+          ? "text-neutral-200 underline underline-offset-8 hover:cursor-default"
+          : "text-neutral-400 hover:text-neutral-200 border-transparent"
+      } w-fit whitespace-nowrap transition-all duration-300 py-4 px-4 text-center font-light`;
+
+  return (
+    <Link href={href} className={styles}>
+      {isMobile ? (
+        <div className="py-2 px-4" onClick={onClick}>
+          {text}
+        </div>
+      ) : (
+        text
+      )}
     </Link>
   );
 };
@@ -88,11 +74,7 @@ const Navbar = () => {
         <ul className="flex gap-4 md:gap-10 justify-center">
           {links.map((link) => {
             return (
-              <HeaderNavLink
-                href={link.path}
-                text={link.text}
-                key={link.text}
-              />
+              <NavLink key={link.text} href={link.path} text={link.text} />
             );
           })}
         </ul>
@@ -113,8 +95,9 @@ const Navbar = () => {
             <nav className="flex flex-col gap-3">
               {links.map((link) => {
                 return (
-                  <MobileNavLink
+                  <NavLink
                     key={link.text}
+                    isMobile
                     href={link.path}
                     text={link.text}
                     onClick={() => setOpen(false)}
