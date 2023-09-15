@@ -7,9 +7,10 @@ import { Github, Linkedin } from "lucide-react";
 type FooterNavLinkProps = {
   href: string;
   text: string;
+  id: string;
 };
 
-const FooterNavLink = ({ href, text }: FooterNavLinkProps) => {
+const FooterNavLink = ({ href, text, id }: FooterNavLinkProps) => {
   const currentRoute = usePathname();
 
   const isActiveRoute =
@@ -18,6 +19,7 @@ const FooterNavLink = ({ href, text }: FooterNavLinkProps) => {
 
   return (
     <Link
+      id={id}
       href={href}
       className={`text-neutral-500 ${
         !isActiveRoute ? "hover:text-neutral-100" : "hover:cursor-default"
@@ -33,10 +35,10 @@ const FooterNavLink = ({ href, text }: FooterNavLinkProps) => {
 };
 
 const links = [
-  { path: "/#about", text: "About" },
-  { path: "/publications", text: "Publications" },
-  { path: "/contact", text: "Contact Us" },
-  { path: "/join", text: "Join Our Team" },
+  { path: "/", text: "Home", id: "footer-home" },
+  { path: "/publications", text: "Publications", id: "footer-publications" },
+  { path: "/contact", text: "Contact Us", id: "footer-contact" },
+  { path: "/join", text: "Join Our Team", id: "footer-join" },
 ];
 
 const Footer = () => {
@@ -53,7 +55,11 @@ const Footer = () => {
                 {links.map((link) => {
                   return (
                     <li key={link.text}>
-                      <FooterNavLink href={link.path} text={link.text} />
+                      <FooterNavLink
+                        href={link.path}
+                        text={link.text}
+                        id={link.id}
+                      />
                     </li>
                   );
                 })}
@@ -67,12 +73,14 @@ const Footer = () => {
           </h2>
           <div className="flex gap-6 text-neutral-500 justify-center items-center">
             <Link
+              id="linkedin-link"
               href="https://www.linkedin.com/company/barnstorm-research-corporation"
               className="hover:text-neutral-100 transition-all duration-300"
             >
               <Linkedin size={20} />
             </Link>
             <Link
+              id="github-link"
               href="https://github.com/Barnstorm-Research/brc-web"
               className="hover:text-neutral-100 transition-all duration-300"
             >
