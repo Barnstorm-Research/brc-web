@@ -35,7 +35,7 @@ const SheetOverlay = React.forwardRef<
       data-[state=closed]:animate-out 
       data-[state=closed]:fade-out-0 
       data-[state=open]:fade-in-0 
-      bg-white/80 
+      bg-neutral-200/80 
       dark:bg-neutral-950/80`,
       className
     )}
@@ -49,10 +49,12 @@ const sheetVariants = cva(
   `fixed 
   z-50 
   gap-4 
-  bg-white 
+  bg-neutral-800
+  border-neutral-400 
   p-6
   pt-10 
-  shadow-lg 
+  shadow-lg
+  max-w-[300px] 
   transition 
   ease-in-out 
   data-[state=open]:animate-in 
@@ -135,7 +137,7 @@ const SheetContent = React.forwardRef<
         data-[state=open]:bg-neutral-100 
         dark:data-[state=open]:bg-neutral-800`}
       >
-        <X className="h-6 w-6 text-neutral-950" />
+        <X className="h-6 w-6 text-neutral-200" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>
