@@ -1,8 +1,45 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import ScrollLink from "./components/ScrollLink";
+import barnstormLogo from "../public/barnstorm_logo.jpg";
+
 const Home = () => {
   return (
-    <main className="flex flex-col p-6 sm:p-12 flex-1 text-neutral-900">
-      <section id="about">
-        <div className="px-4 py-40">
+    <main className="flex flex-col p-6 sm:p-12 flex-1">
+      <section className="min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-104px)] flex flex-col justify-center sm:pb-20 md:pl-6 mb-24 sm:mb-12">
+        <Image
+          src={barnstormLogo.src}
+          alt="Barnstorm Research Logo"
+          width={450}
+          height={100}
+          className="pb-16 mx-auto sm:m-0"
+        />
+        <p className="text-neutral-700 text-lg sm:text-xl lg:text-2xl text-center sm:text-left">
+          Advanced Software Solutions for Cutting Edge Research
+        </p>
+        <p className="text-neutral-500 text-md md:text-lg py-10 font-light mb-8 sm:mb-16 text-center sm:text-left max-w-xl">
+          Some text here about what we do. This text is a little smaller and
+          should be a few sentences. At the end of this you should know what
+          Barnstorm does.
+        </p>
+        <div className="flex flex-col xs:flex-row gap-6 items-center justify-center sm:justify-start">
+          <Button variant="accent" asChild className="w-40">
+            <Link href="/contact">Contact Us</Link>
+          </Button>
+          <Button variant="outline" asChild className="w-40">
+            <ScrollLink href="#about">About Us</ScrollLink>
+          </Button>
+        </div>
+      </section>
+      <section>
+        <h1
+          id="about"
+          className="text-4xl text-center uppercase tracking-widest p-4 pb-12 md:pb-24 text-neutral-900"
+        >
+          About
+        </h1>
+        <div className="px-4 pb-36 pt-12">
           <div className="relative w-fit m-auto sm:p-16 max-w-2xl">
             <h2 className="text-center text-2xl uppercase tracking-widest pb-12 px-4 text-neutral-400 font-extralight">
               Our Philosophy
@@ -22,7 +59,7 @@ const Home = () => {
         </div>
 
         <div className="px-4 py-8 sm:p-12 lg:px-16 lg:py-24 mb-32 sm:mb-44 bg-neutral-950 sm:-mx-12 -mx-6">
-          <h2 className="text-xl md:text-2xl text-center uppercase tracking-widest p-4 pb-12 md:pb-24 text-neutral-400">
+          <h2 className="text-3xl text-center uppercase tracking-widest p-4 pb-12 md:pb-24 text-neutral-400">
             What We Do
           </h2>
           <div className="relative m-auto md:flex items-center justify-center gap-12 max-w-6xl pb-4">
