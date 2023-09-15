@@ -12,9 +12,7 @@ type FooterNavLinkProps = {
 const FooterNavLink = ({ href, text }: FooterNavLinkProps) => {
   const currentRoute = usePathname();
 
-  const isActiveRoute =
-    currentRoute.includes(href.slice(1)) ||
-    (currentRoute === "/" && href === "/#about");
+  const isActiveRoute = currentRoute === href;
 
   return (
     <Link
@@ -33,7 +31,7 @@ const FooterNavLink = ({ href, text }: FooterNavLinkProps) => {
 };
 
 const links = [
-  { path: "/#about", text: "About" },
+  { path: "/", text: "Home" },
   { path: "/publications", text: "Publications" },
   { path: "/contact", text: "Contact Us" },
   { path: "/join", text: "Join Our Team" },
