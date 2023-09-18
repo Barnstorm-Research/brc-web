@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { JobsListProps } from "../components/JobsList";
 import JobsList from "../components/JobsList";
 import { Suspense } from "react";
 
@@ -6,6 +7,31 @@ export const metadata: Metadata = {
   title: "Join Our Team",
   description: "Join Our Team",
 };
+
+// DEMO USE ONLY
+// const data: JobsListProps = {
+//   jobs: [
+//     {
+//       url: "https://google.com",
+//       title: "Software Develop 1",
+//       shortDescription: "Make cool software for cool customers.",
+//     },
+//     {
+//       url: "https://linkedin.com",
+//       title: "Principal Research Engineer",
+//       shortDescription:
+//         "Think through really challenging but rewarding problems!",
+//     },
+//     {
+//       url: "https://sbir.gov",
+//       title: "Algorithm Developer",
+//       shortDescription: "Create the latest in the world of AI, NLP, and more.",
+//     },
+//   ],
+// };
+
+// PRODUCTION DATA
+const data: JobsListProps = { jobs: [] };
 
 const JoinPage = () => {
   return (
@@ -23,7 +49,7 @@ const JoinPage = () => {
           </div>
         }
       >
-        <JobsList />
+        <JobsList {...data} />
       </Suspense>
     </main>
   );
