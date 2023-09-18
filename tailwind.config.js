@@ -3,6 +3,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
 const plugin = require("tailwindcss/plugin");
 const flattenColorPalette =
   require("tailwindcss/lib/util/flattenColorPalette").default;
@@ -77,6 +79,13 @@ module.exports = {
         "main-accent": "#3a5520",
       },
     },
+    screens: {
+      xs: "400px",
+      ...defaultTheme.screens,
+    },
   },
   plugins: [require("tailwindcss-animate"), textBorder],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };
