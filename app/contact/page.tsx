@@ -13,7 +13,8 @@ const ContactPage = () => {
         Contact Us
       </h1>
       <div className="gap-x-6 gap-y-6 grid-rows-[auto] grid-cols-[1fr_1fr] auto-cols-[1fr] grid-flow-row items-stretch justify-items-stretch grid">
-        <div className="bg-white flex-col justify-between items-start flex overflow-hidden rounded-xl">
+        {/* <div className="bg-white flex-col justify-between items-start flex overflow-hidden rounded-xl"> */}
+        <div className="group w-full mb-0 mt-0 mb-[15px] mx-0 bg-neutral-50 rounded-md p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-500 delay-75 border border-solid border-neutral-300">
           <div className="z-[1] w-full flex-col flex-[1_0_auto] justify-between flex relative mx-auto">
             <div className="mb-8">
               <h2 className="inline text-[#1d252d] tracking-[-0.02em] text-2xl font-semibold leading-[120%] mb-2">
