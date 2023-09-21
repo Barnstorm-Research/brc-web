@@ -2,8 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Contact, Mail, Phone } from "lucide-react";
-import { PatternFormat } from "react-number-format";
-import type { NumberFormatValues } from "react-number-format";
+import { PatternFormat, NumberFormatValues } from "react-number-format";
 import emailjs from "@emailjs/browser";
 
 interface FormElements extends HTMLFormControlsCollection {
@@ -73,7 +72,7 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <div className="w-full mb-0 mt-0 mb-[15px] mx-0">
+      <div className="w-full mt-0 mb-[15px] mx-0">
         <form onSubmit={this.sendEmail} ref={this.form}>
           <label
             htmlFor="fullNameInput"
@@ -175,7 +174,7 @@ class ContactForm extends React.Component {
             </Button>
           </div>
         </form>
-        <p className="text-neutral-500 text-md md:text-lg py-10 font-light mb-8 sm:mb-16 text-center sm:text-left max-w-xl">
+        <p className="text-neutral-500 text-md md:text-lg py-4 font-light text-center sm:text-left max-w-xl">
           {this.state.submissionMessage}
         </p>
       </div>
