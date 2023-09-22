@@ -56,6 +56,10 @@ class ContactForm extends React.Component {
         (result) => {
           console.log(result);
           this.setState({
+            fullName: "",
+            phone: "",
+            email: "",
+            message: "",
             submissionMessage:
               "Thank you for reaching out! We will be in touch shortly.",
           });
@@ -94,6 +98,7 @@ class ContactForm extends React.Component {
               name="fullName"
               className="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               value={this.state.fullName}
+              placeholder={this.state.fullName}
               onChange={this.onChangeName}
               required
             />
@@ -119,6 +124,7 @@ class ContactForm extends React.Component {
               id="emailInput"
               name="email"
               value={this.state.email}
+              placeholder={this.state.email}
               onChange={this.onChangeEmail}
               required
             />
@@ -144,6 +150,7 @@ class ContactForm extends React.Component {
               id="phoneInput"
               name="phone"
               format="(###) ###-####"
+              value={this.state.phone}
               mask="_"
               onValueChange={(value: NumberFormatValues) =>
                 this.onChangePhone(value.formattedValue)
@@ -163,6 +170,7 @@ class ContactForm extends React.Component {
               id="messageInput"
               name="message"
               value={this.state.message}
+              placeholder={this.state.message}
               onChange={this.onChangeMessage}
             />
           </div>
