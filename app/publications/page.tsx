@@ -25,6 +25,12 @@ const PublicationsPage = () => {
       prefix: "Dr.",
     },
     {
+      name: "Irina Rabkina",
+      href: "https://scholar.google.com/citations?hl=en&user=g5T4T24AAAAJ",
+      image: undefined,
+      prefix: "Dr.",
+    },
+    {
       name: "Rem Wransky",
       href: "https://scholar.google.com/citations?user=oO21unYAAAAJ&hl=en&oi=sra",
       image: undefined,
