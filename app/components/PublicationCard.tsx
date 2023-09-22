@@ -8,15 +8,15 @@ const PublicationCard = ({ name, href, image, prefix }: TeamMemberLinkType) => {
   const firstInitial = nameSplit[0][0];
   const lastInitial = nameSplit[nameSplit.length - 1][0];
 
-  const cardBg = "bg-neutral-200";
+  const cardBg = "bg-neutral-50";
   const cardTextColor = "text-main-accent";
-  const cardFooterBg = "bg-neutral-200";
+  const cardFooterBg = "bg-neutral-50";
   const cardFooterTextColor = "text-neutral-800";
 
   return (
     <Link
       href={href}
-      className={`group w-full max-w-[350px] md:max-w-none shadow-lg rounded-lg overflow-hidden md:hover:shadow-2xl transition-all duration-700 md:hover:scale-105 delay-100 ${cardTextColor} ${cardBg}`}
+      className={`group w-full max-w-[380px] sm:w-[380px] md:max-w-none shadow-lg rounded-lg overflow-hidden md:hover:shadow-2xl transition-all duration-700 md:hover:scale-105 delay-100 ${cardTextColor} ${cardBg} border border-solid border-neutral-200`}
     >
       <div className="flex-col w-full relative">
         {image ? (

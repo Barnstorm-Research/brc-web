@@ -30,12 +30,12 @@ const PublicationsPage = () => {
       image: undefined,
       prefix: "Ms.",
     },
-    {
-      name: "Lissangel Martinez",
-      href: "",
-      image: undefined,
-      prefix: "Ms.",
-    },
+    // {
+    //   name: "Lissangel Martinez",
+    //   href: "",
+    //   image: undefined,
+    //   prefix: "Ms.",
+    // },
   ];
 
   const barnstormPublications = [
@@ -70,7 +70,7 @@ const PublicationsPage = () => {
           </h2>
           <div className="h-[1px] flex-1 bg-neutral-300 mx-2 max-w-sm hidden sm:block"></div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 md:auto-cols-max gap-8 place-items-center max-w-7xl xl:m-auto">
+        <div className="flex flex-wrap gap-8 items-center justify-center max-w-7xl xl:m-auto">
           {teamMemberLinks.map((link) => {
             return (
               <PublicationCard
